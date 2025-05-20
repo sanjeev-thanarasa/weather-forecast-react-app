@@ -1,0 +1,340 @@
+/* ------------------------------------ */
+/* Font Import */
+/* ------------------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@200;300;400;500;600;700;800&display=swap");
+
+/* ------------------------------------ */
+/* Global Styles */
+/* ------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  transition: background 1s ease-in-out;
+}
+
+/* ------------------------------------ */
+/* Weather Card Container */
+/* ------------------------------------ */
+.container {
+  width: 350px;
+  padding: 30px 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Card entrance animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------ */
+/* Search Box */
+/* ------------------------------------ */
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 70%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+}
+
+.search-box button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.search-box button:hover {
+  transform: scale(1.1);
+}
+
+.search-box button img {
+  width: 40px;
+  height: 40px;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.search-icon img:hover {
+  transform: scale(1.1);
+}
+
+/* ------------------------------------ */
+/* Weather Info Display */
+/* ------------------------------------ */
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-icon {
+  width: 100px;
+  margin: 20px auto;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.temp {
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.city {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.status {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffbb00;
+  text-transform: uppercase;
+}
+
+.country {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  padding: 8px 0 20px 0;
+}
+
+/* ------------------------------------ */
+/* Coordinates Display */
+/* ------------------------------------ */
+.coords {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: rgb(52, 50, 50);
+}
+
+.lat,
+.log {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lat {
+  padding-left: 5vh;
+}
+
+.log {
+  padding-right: 5vh;
+}
+
+.lat span:nth-child(2),
+.log span:nth-child(2) {
+  font-weight: bold;
+}
+
+/* ------------------------------------ */
+/* Additional Info (Humidity & Wind) */
+/* ------------------------------------ */
+.info-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.info-box img {
+  width: 30px;
+  height: 30px;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0% {
+    transform: scale(1.1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.humidity,
+.wind {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.humidity p,
+.wind p {
+  color: #43484e;
+}
+
+.humidity span,
+.wind span {
+  padding-top: 5px;
+  font-weight: bold;
+  color: #43484e;
+}
+
+.humidity span,
+.humidity img,
+.humidity p,
+.wind span,
+.wind img,
+.wind p {
+  margin-bottom: 4px;
+}
+
+/* ------------------------------------ */
+/* Footer Styles */
+/* ------------------------------------ */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #7f8c8d;
+  text-align: center;
+  margin: 3vh 0 0 0;
+  padding: 3vh 0 2vh;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  animation: fadeInFooter 0.8s ease-in-out;
+}
+
+.footer:hover {
+  animation: fadeInFooter 0.8s ease-in-out;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+@keyframes fadeInFooter {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.footer a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 400;
+  padding-left: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #3498db;
+  text-decoration: underline;
+}
+
+/* ------------------------------------ */
+/* Error Message Styles */
+/* ------------------------------------ */
+.city-not-found,
+.error-message {
+  margin-top: 20px;
+  padding: 15px 20px;
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ff4d4f;
+  text-align: center;
+  animation: fadeInError 0.6s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInError {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------ */
+/* Loading Spinner */
+/* ------------------------------------ */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  margin: 40px auto;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
