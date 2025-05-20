@@ -89,5 +89,5 @@ MIT License
 ---
 ## 🌐 Live Demo
 
-Check out the live app here: [weather-forecast-react-app.vercel.app](https://weather-forecast-react-app.vercel.app)
+Check out the live app here: [weather-forecast-react-app.vercel.app](https://weather-forecast-react-app-one.vercel.app/)
 
